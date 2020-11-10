@@ -4,25 +4,42 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { LoginsuccessComponent } from './loginsuccess/loginsuccess.component';
+import { RegisterComponent } from './register/register.component';
+import { TachesComponent } from './taches/taches.component';
+import { NewTachesComponent } from './new-taches/new-taches.component';
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {AuthentificationService} from "../services/authentification.service";
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { MenuComponent } from './menu/menu.component';
+import { ChevauxComponent } from './chevaux/chevaux.component';
+import { PlanningsComponent } from './plannings/plannings.component';
+import { RepriseCoursComponent } from './reprise-cours/reprise-cours.component';
+import { UtilisateursComponent } from './utilisateurs/utilisateurs.component';
+import { AccueilComponent } from './accueil/accueil.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistrationComponent,
-    LoginsuccessComponent
+    RegisterComponent,
+    TachesComponent,
+    NewTachesComponent,
+    ForgotPasswordComponent,
+    MenuComponent,
+    ChevauxComponent,
+    PlanningsComponent,
+    RepriseCoursComponent,
+    UtilisateursComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    AppRoutingModule,
     HttpClientModule,
-    AppRoutingModule
+    FormsModule
   ],
-  providers: [],
+  providers: [AuthentificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

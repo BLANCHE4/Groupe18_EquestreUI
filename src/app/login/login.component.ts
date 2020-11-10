@@ -1,36 +1,41 @@
-import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
-import {NgForm} from '@angular/forms';
-import { Router } from '@angular/router';
-import { RegistrationService } from '../registration.service';
-import { User } from '../user';
+import {Router} from "@angular/router";
+import {AuthentificationService} from "../../services/authentification.service";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  user = new User();
-  msg='';
+  mode:number=0;
 
-  constructor(private _service : RegistrationService, private _router : Router) { }
+  constructor(private authService:AuthentificationService, private router:Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    let token=this.authService.loadToken();
+    if(token)
+      this.router.navigateByUrl("/dashboard");
   }
 
-  loginUser(){
-    this._service.loginUserFromRemote(this.user).subscribe(
-      data =>{
-        this._router.navigate(['/loginsuccess'])
-         console.log("response received");
-      },
-      error =>{
-        console.log("exception occured");
-        this.msg="Bad credentiel, please enter valid emailid an passsword";
-      } 
-    );
-
+  onLogin(user){
+      this.authService.login(user)
+        .subscribe(resp=>{
+            let jwtToken=resp.headers.get('authorization');
+            //console.log(jwtToken);
+            this.authService.saveToken(jwtToken);
+            this.router.navigateByUrl("/dashboard");
+          },
+          err=>{
+            this.mode=1;
+          });
   }
 
+  onRegister(){
+    this.router.navigateByUrl("/register");
+  }
+
+  onForgotPassword(){
+    this.router.navigateByUrl("/forgot-password");
+  }
 }
