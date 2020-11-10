@@ -1,0 +1,77 @@
+<div class="signup-box" style="padding-left: 0; max-width: 360px; margin: 7% auto; overflow-x: hidden;">
+  <!--<div class="logo">
+    <a href="javascript:void(0);">Centre<b>&nbsp;EQUESTRE</b></a>
+    &lt;!&ndash; <small>Admin BootStrap Based - Material Design</small> &ndash;&gt;
+  </div>-->
+
+  <div class="card">
+    <div class="body">
+      <form id="sign_up" #f="ngForm" (ngSubmit)="onRegister(f.value)">
+        <div class="alert alert-danger" *ngIf="mode==0 && errorMessage">
+          <strong>{{errorMessage}}</strong>
+        </div>
+        <div class="alert alert-success" *ngIf="mode==1">
+          <strong>Registration Success</strong>
+        </div>
+        <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">person</i>
+                        </span>
+          <div class="form-line">
+            <input type="text" ngModel="" class="form-control" name="nom" placeholder="Nom" required autofocus autocomplete="off"/>
+          </div>
+        </div>
+        <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">person</i>
+                        </span>
+          <div class="form-line">
+            <input type="text" ngModel="" class="form-control" name="prenom" placeholder="Prénom" required autocomplete="off"/>
+          </div>
+        </div>
+        <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">phone</i>
+                        </span>
+          <div class="form-line">
+            <input type="text" ngModel="" class="form-control" name="telephone" placeholder="Téléphone" required autocomplete="off"/>
+          </div>
+        </div>
+        <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">email</i>
+                        </span>
+          <div class="form-line">
+            <input type="email" ngModel="" class="form-control" name="username" placeholder="Email Address" required autocomplete="off"/>
+          </div>
+        </div>
+        <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">lock</i>
+                        </span>
+          <div class="form-line">
+            <input type="password" ngModel="" class="form-control" name="password" minlength="6" placeholder="Password" required />
+          </div>
+        </div>
+        <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">lock</i>
+                        </span>
+          <div class="form-line">
+            <input type="password" ngModel="" class="form-control" name="repassword" minlength="6" placeholder="Confirm Password" required>
+          </div>
+        </div>
+        <!--<div class="form-group">
+          <input type="checkbox" name="terms" id="terms" class="filled-in chk-col-pink">
+          <label for="terms">I read and agree to the <a href="javascript:void(0);">terms of usage</a>.</label>
+        </div>-->
+
+        <button [disabled]="!f.valid" class="btn btn-block btn-lg bg-pink waves-effect" type="submit">S'INSCRIRE</button>
+
+        <div class="m-t-25 m-b--5 align-center">
+          <a [routerLink]="['']">Vous êtes déjà inscrit?</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

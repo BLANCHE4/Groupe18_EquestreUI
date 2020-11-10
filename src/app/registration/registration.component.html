@@ -3,7 +3,7 @@
     <div class="container" style="max-width:600px; background-color: white; border-radius:1%;">
         <h2 class="textual">User Registration</h2>
         <form #Registerform="ngForm" (ngSubmit)="registrerUser()">
-            <small [class.text-danger]="msg.status==500" >{{msg.message}} </small>
+            <!-- <small [class.text-danger]="msg.status==500" >{{msg.message}} </small> -->
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" class="form-control" placeholder="Enter email" name="email"
