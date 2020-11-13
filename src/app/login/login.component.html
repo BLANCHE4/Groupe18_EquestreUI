@@ -1,8 +1,6 @@
+<div style="min-width: 100%; min-height:200%; background-image: url('../assets/img/horse.jpg');">
+  <br>
 <div class="login-box" style="padding-left: 0; max-width: 360px; margin: 10% auto; overflow-x: hidden;">
-  <!--<div class="logo">
-    <a href="javascript:void(0);">Centre<b>&nbsp;EQUESTRE</b></a>
-    &lt;!&ndash; <small>Admin BootStrap Based - Material Design</small> &ndash;&gt;
-  </div>-->
   <div class="card">
     <div class="body">
       <form id="sign_in" #f="ngForm" (ngSubmit)="onLogin(f.value)">
@@ -10,19 +8,21 @@
           <strong>Bad credentials!</strong> Invalid username or password.
         </div>
         <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="material-icons">person</i>
-                        </span>
+          <span class="input-group-addon">
+            <i class="material-icons">person</i>
+          </span>
           <div class="form-line">
-            <input type="email" class="form-control" name="username" ngModel="" placeholder="Email" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" required autocomplete="off"/>
+            <input type="email" class="form-control" name="username" ngModel="" placeholder="Email"
+              pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" required autocomplete="off" />
           </div>
         </div>
         <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="material-icons">lock</i>
-                        </span>
+          <span class="input-group-addon">
+            <i class="material-icons">lock</i>
+          </span>
           <div class="form-line">
-            <input type="password" class="form-control" name="password" ngModel="" placeholder="Mot de passe" required autocomplete="off"/>
+            <input type="password" class="form-control" name="password" ngModel="" placeholder="Mot de passe" required
+              autocomplete="off" />
           </div>
         </div>
         <div class="row">
@@ -31,18 +31,23 @@
             <label for="rememberme">Se souvenir de moi</label>
           </div>
           <div class="col-xs-6">
-            <button [disabled]="f.form.invalid" class="btn btn-block bg-pink waves-effect" type="submit">SE CONNECTER</button>
+            <button [disabled]="f.form.invalid" class="btn btn-block bg-pink waves-effect" type="submit">SE
+              CONNECTER</button>
           </div>
         </div>
         <div class="row m-t-15 m-b--20">
           <div class="col-xs-6">
-            <a (click)="onRegister()" style="cursor: pointer; float: right; margin-top: 10px;">S'inscrire maintenant!</a>
+            <a (click)="onRegister()" style="cursor: pointer; float: right; margin-top: 10px;">S'inscrire
+              maintenant!</a>
           </div>
           <div class="col-xs-6 align-right">
-            <a (click)="onForgotPassword()" style="cursor: pointer; float: right; margin-top: 10px;">Mot de passe oublié?</a>
+            <a (click)="onForgotPassword()" style="cursor: pointer; float: right; margin-top: 10px;">Mot de passe
+              oublié?</a>
           </div>
         </div>
       </form>
     </div>
   </div>
+</div>
+<br><br><br><br>
 </div>
